@@ -23,7 +23,6 @@ GRANT Lock tables ON kakaodb.* TO 'kakaouser'@'%';
 GRANT Grant option ON kakaodb.* TO 'kakaouser'@'%';
 
 
-
 DROP TABLE IF EXISTS board;
 CREATE TABLE board (
 	bno	bigint NOT NULL auto_increment,
