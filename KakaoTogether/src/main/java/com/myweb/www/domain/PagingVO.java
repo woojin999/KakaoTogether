@@ -14,6 +14,8 @@ public class PagingVO {
 	
 	private String type;
 	private String kw;
+	private String orderBy;
+	private String topic;
 	
 	public PagingVO() {
 		this(1, 12);
