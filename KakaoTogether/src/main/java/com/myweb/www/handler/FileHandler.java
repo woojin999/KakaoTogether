@@ -55,7 +55,7 @@ private final String UP_DIR = "C:\\_java\\lec\\_spring\\uploaded";
 					
 					File thumbNail = new File(folder,
 							uuid.toString() + "_th" + onlyFileName);
-					Thumbnails.of(storeFile).size(100, 100).toFile(thumbNail);
+					Thumbnails.of(storeFile).size(300, 300).toFile(thumbNail);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

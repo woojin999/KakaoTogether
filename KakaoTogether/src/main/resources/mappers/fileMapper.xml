@@ -19,4 +19,8 @@
 	<delete id="deleteAllBFile" parameterType="long">
 		delete from image_file where bno = #{bno}
 	</delete>
+	
+	<select id="selectAllFiles" resultType="fvo">
+		select * from image_file
+	</select>
 </mapper>
