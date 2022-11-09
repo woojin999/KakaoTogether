@@ -45,11 +45,9 @@ function getDonationList(bnoVal, pageNo=1) {
         }
 
         const moreBtn = document.getElementById('moreBtn');
-        console.log(Math.ceil(result.totalCount / 10.0));
         if(pageNo < parseInt(Math.ceil(result.totalCount / 10.0))) {
         moreBtn.style.visibility = 'visible';
           let pageIdx = moreBtn.dataset.page;
-          console.log(pageIdx);
          moreBtn.dataset.page =  parseInt(pageIdx) + 1;
         }else{
         moreBtn.style.visibility = 'hidden';

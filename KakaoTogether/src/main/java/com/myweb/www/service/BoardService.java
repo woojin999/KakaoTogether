@@ -14,4 +14,5 @@ public interface BoardService {
 	int remove(long bno);
 	int getTotalCount(PagingVO pgvo);
 	int removeFile(String uuid);
+	int cheerup(BoardVO bvo);
 }

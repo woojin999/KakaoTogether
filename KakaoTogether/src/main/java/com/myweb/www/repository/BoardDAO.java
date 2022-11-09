@@ -16,5 +16,5 @@ public interface BoardDAO {
 	int delete(long bno);
 	int selectTotalCount(PagingVO pgvo);
 	long selectLastBno();
-	
+	int cheer(BoardVO bvo);
 }
