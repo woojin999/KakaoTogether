@@ -75,13 +75,14 @@
 	
 	<!-- 응원하기 하단바 -->
 	<div class="fund_float">
-		<a class="btn_c" onclick="cheer(${content.idx}, ${loginIdx})">
-			<span class="ico_cheer"><img src="${imgSrc}/ico_cheer.svg"></span>
+	<a>
+		<button type="button" class="btn_c chrBtn" id="chrBtn" data-bno="${bvo.bno }">
+			<span class="ico_cheer"><img src="/resources/image/ico_cheer.svg"></span>
 			<span class="txt_cheer">응원</span>
-			<span class="num_active">${cheer}</span>
-		</a>
+			<span class="txt_cheer chrnum" id="chrnum" style="font-size: 15px; color: lightgray;">${bvo.cheer}</span>
+		</button></a>
 		<a class="btn_s" onclick="share()">
-			<span class="ico_share"><img src="${imgSrc}/ico_share.svg"></span>
+			<span class="ico_share"><img src="/resources/image/ico_share.svg"></span>
 			<span class="txt_share">공유</span>
 		</a>
 		<a class="btn_d" onclick="donate_open(${3333})">
@@ -153,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <script src="/resources/js/donation.register.js"></script>
 <script src="/resources/js/donation.list.js"></script>
+<script src="/resources/js/board.cheerup.js"></script>
 
 
 </div>

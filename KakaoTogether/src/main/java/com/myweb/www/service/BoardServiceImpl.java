@@ -83,4 +83,11 @@ public class BoardServiceImpl implements BoardService {
 		return fdao.deleteFile(uuid);
 	}
 
+	@Override
+	public int cheerup(BoardVO bvo) {
+		return bdao.cheer(bvo);
+	}
+
+	
+
 }

@@ -65,7 +65,7 @@
 	
 	<select id="selectOne" resultType="bvo">
 			select bno, mno, title, sub_title, writer, topic, state, description, 
-		price, keyword1, keyword2, keyword3, end_date, final_price, board_img
+		price, keyword1, keyword2, keyword3, end_date, final_price, board_img, cheer
 		from board
 		where bno = #{bno};
 	</select>
@@ -99,6 +99,12 @@
 	<update id="updateFinal" parameterType="dvo">
 		update board set
 		final_price = final_price + #{donation}
+		where bno = #{bno}
+	</update>
+	
+	<update id="cheer" parameterType="bvo">
+		update board set
+		cheer = #{cheer} + 1
 		where bno = #{bno}
 	</update>
 	

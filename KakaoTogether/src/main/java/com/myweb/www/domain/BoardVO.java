@@ -32,6 +32,7 @@ public class BoardVO {
 	private long finalPrice; // 최종 모금액
 	private String boardImg; // 사진
 	private int fileCount;
+	private int cheer; // 응원수
 	
 	// register
 	public BoardVO(long mno, String title, String subTitle, String writer, String topic, String state, String description, long price,
@@ -64,7 +65,7 @@ public class BoardVO {
 	
 	// detail
 	public BoardVO(long bno, String title, String subTitle, String writer, String description, long price, String keyword1,
-			String keyword2, String keyword3, String regAt, String endDate, long finalPrice, String boardImg) {
+			String keyword2, String keyword3, String regAt, String endDate, long finalPrice, String boardImg, int cheer) {
 		this.bno = bno;
 		this.title = title;
 		this.subTitle = subTitle;
@@ -78,6 +79,7 @@ public class BoardVO {
 		this.endDate = endDate;
 		this.finalPrice = finalPrice;
 		this.boardImg = boardImg;
+		this.cheer = cheer;
 	}
 
 	// modify
@@ -95,6 +97,11 @@ public class BoardVO {
 		this.keyword3 = keyword3;
 		this.endDate = endDate;
 		this.boardImg = boardImg;
+	}
+	// 응원하기
+	public BoardVO(long bno, int cheer) {
+		this.bno = bno;
+		this.cheer = cheer;
 	}
  
 	
