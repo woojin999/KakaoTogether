@@ -11,42 +11,22 @@
 		<ul class="inner">
 			<li>
 				<a href="/board/list?topic=">
-				<%-- <c:if test="${url eq '/main' or fn:contains(url, '/fund')}"> --%>
-					<span class="on">같이기부</span></a>
-				<%-- </c:if>
-				<c:if test="${url ne '/main' and not fn:contains(url, '/fund')}">
-					<span>같이기부</span>
-				</c:if> --%>
+					<span class="on">같이기부</span>
 				</a>
 			</li>
 			<li>
 				<a href="/prom">
-				<%-- <c:if test="${fn:contains(url, '/prom')}"> --%>
 					<span class="on">프로모션</span>
-			<%-- 	</c:if>
-				<c:if test="${not fn:contains(url, '/prom')}">
-					<span>프로모션</span>
-				</c:if> --%>
 				</a>
 			</li>
 			<li>
 				<a href="/moreinfo">	
-					<%-- <c:if test="${fn:contains(url, '/moreinfo')}"> --%>
 						<span class="on">더보기</span>
-					<%-- </c:if>
-					<c:if test="${not fn:contains(url, '/moreinfo')}">
-						<span>더보기</span>
-					</c:if>	 --%>
 				</a>
 			</li>
 			<li>
 				<a href="/sendmail">
-					<%-- <c:if test="${fn:contains(url, '/sendmail')}">
-						<span class="on">Contact</span>
-					</c:if>
-					<c:if test="${not fn:contains(url, '/sendmail')}"> --%>
 						<span>Contact</span>
-					<%-- </c:if>		 --%>			
 				</a>
 			</li>
 		</ul>
@@ -54,23 +34,16 @@
 	
 	<nav id="wrap_util">
 		<ul class="inner">
-			<%-- <%
-				MemberDTO loginDTO = (MemberDTO) session.getAttribute("login");
-				if (loginDTO == null){
-			%> --%>
 			<li>
-				<a class="link_util link_fund" href="/join"">회원가입</a>
+				<a class="link_util link_fund" href="/join">회원가입</a>
 			</li>
 			<li>
 				<a class="link_util link_login" href="/login">로그인</a>
 			</li>
 			
-			<%-- <% } else { %> --%>
 			<li>
-				<%-- <c:if test="${url ne '/write'}"> --%>
 				<a class="link_util link_fund" href="/board/register" 
 				 style="background-color:#dc287c; border-color:#dc287c;">등록하기</a>
-			<%-- 	</c:if> --%>
 			</li>
 			<li>
 				<a class="link_util link_login" href="/mypage" 
@@ -79,7 +52,6 @@
 			<li>
 				<a class="link_util link_login" href="/logout.action">로그아웃</a>
 			</li>
-		<%-- 	<% } %> --%>
 			<li>
 				<a class="btn_search" href="/search"><span class="ico_search"><img src="/resources/image/ico_search_01.svg"></span></a>
 			</li>
