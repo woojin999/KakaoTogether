@@ -1827,6 +1827,7 @@ input {
 
 
 #wrap_donation .wrap_btn_type .btn {
+    border-color: #dc287c;
 	border-radius: 4px;
     width: 100%;
     margin: 0 0 12px;
@@ -1834,6 +1835,7 @@ input {
     display: inline-block;
     text-align: center;
     cursor: pointer;
+    font-weight: bold;
 }
 
 #wrap_donation .wrap_btn_type .btn span {
@@ -1943,5 +1945,25 @@ input {
     display: inline-block;
     font-size: 15px;
     line-height: 20px;
+    vertical-align: top;
+}
+
+.list_more {
+    padding-top: 15px;
+    position: relative;
+    background-color: #fff;
+    padding: 23px 0 0;
+    text-align: center;
+}
+
+.link_round {
+    padding: 0 20px;
+    font-size: 15px;
+    line-height: 38px;
+    display: inline-block;
+    height: 40px;
+    border: 1px solid #e7e7e7;
+    cursor: pointer;
+    border-radius: 20px;
     vertical-align: top;
 }
