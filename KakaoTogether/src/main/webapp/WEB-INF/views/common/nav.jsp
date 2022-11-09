@@ -10,7 +10,7 @@
 	<nav id="wrap_topCate" class="" style="position: static; top: initial;">
 		<ul class="inner">
 			<li>
-				<a href="/board/list">
+				<a href="/board/list?topic=">
 				<%-- <c:if test="${url eq '/main' or fn:contains(url, '/fund')}"> --%>
 					<span class="on">같이기부</span></a>
 				<%-- </c:if>
