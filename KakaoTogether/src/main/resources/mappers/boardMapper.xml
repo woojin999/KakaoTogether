@@ -39,7 +39,7 @@
 					</if>
 			</when>
 					<otherwise>
-							order by bno desc
+							order by reg_at desc
 					</otherwise>
 		</choose>
 	</sql>
@@ -64,7 +64,9 @@
 	</select>
 	
 	<select id="selectOne" resultType="bvo">
-		select * from board
+			select bno, mno, title, sub_title, writer, topic, state, description, 
+		price, keyword1, keyword2, keyword3, end_date, final_price, board_img
+		from board
 		where bno = #{bno};
 	</select>
 	
@@ -93,6 +95,13 @@
 		board_img = #{boardImg}
 		where bno = #{bno}
 	</update>
+	
+	<update id="updateFinal" parameterType="dvo">
+		update board set
+		final_price = final_price + #{donation}
+		where bno = #{bno}
+	</update>
+	
 	<delete id="delete" parameterType="long">
 		delete from board where bno = #{bno}
 	</delete>

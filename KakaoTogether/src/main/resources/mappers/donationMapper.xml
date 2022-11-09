@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myweb.www.repository.DonationDAO">
+	<insert id="insert" parameterType="dvo">
+		insert into donation
+		(mno, bno, donation, comment)
+		values
+		(#{mno}, #{bno}, #{donation}, #{comment})
+	</insert>
+	
+	<select id="selectList" resultType="dvo">
+		select a.dno, b.mno, b.bno, donation, comment, donation_at
+		from (
+			select dno from donation
+			where bno = #{bno}
+			order by dno desc
+			limit #{pgvo.pageStart}, #{pgvo.qty}
+		) a left join donation b
+		on a.dno = b.dno
+	</select>
+	
+	<select id="selectTotalCount" resultType="int">
+		select count(dno) from donation where bno = #{bno}
+	</select>
+	<select id="selectBno" resultType="long">
+		select bno from donation where dno = #{dno}
+	</select>
+</mapper>

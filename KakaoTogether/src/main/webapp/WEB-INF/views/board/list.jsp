@@ -10,13 +10,13 @@
 	<div id="wrap_tab">
 		<ul class="list_tab">
 			<li>
-				<a href="/fund/now?sort=1"><span <%-- <c:if test="${url eq '/main' or fn:contains(url, '/fund/now')}">  --%>class="on">모금중</span></a>
+				<a href="/fund/now?sort=1"><span class="on">모금중</span></a>
 			</li>
 			<li>
-				<a href="/fund/epil?sort=1"><span <%-- <c:if test="${fn:contains(url, '/fund/epil')}"> class="on"</c:if> --%>>모금후기</span></a>
+				<a href="/fund/epil?sort=1"><span>모금후기</span></a>
 			</li>
 			<li>
-				<a href="/Error404"><span <%-- <c:if test="${fn:contains(url, '/fund/campaign')}"> class="on"</c:if> --%>>나눔캠페인</span></a>
+				<a href="/Error404"><span>나눔캠페인</span></a>
 			</li>
 		</ul>
 	</div> <!-- end wrap_tab -->
@@ -63,19 +63,24 @@
 	<ul class="list_fund">
 		 <c:forEach items="${list }" var="bvo">
 		<li class="listcard">
-			<a href="/board/detail?bno=${bvo.bno }" class="link_content">
+			<a href="/board/detail?bno=${bvo.bno }&pageNo=${pgn.pgvo.pageNo }&qty=${pgn.pgvo.qty}" class="link_content">
 				<span class="img_box">
 				<img class="img" src="/upload/${fn:replace(bvo.boardImg,'\\','/')}" alt="...">
 				</span>
 				<span class="text_box">
-				
 					<span class="title">${bvo.title}</span>
 					<span class="agency">${bvo.writer}</span>
 					<span class="state">
 						<span class="state_bar"></span>
 							<c:set var="state" value="120"/>
 							<c:set var="state" value="300"/>
-						<span class="state_ing" style="width: ${bvo.finalPrice/bvo.price*100}%;"></span>
+							
+							<c:if test="${(bvo.finalPrice/bvo.price*100) < 101 }">
+								<span class="state_ing" style="width: ${bvo.finalPrice/bvo.price*100}%;"></span>
+							</c:if>
+							<c:if test="${(bvo.finalPrice/bvo.price*100) > 100 }">
+								<span class="state_ing" style="width: 100%;"></span>
+							</c:if>
 					</span>
 					<span class="price_goal"> ${bvo.finalPrice} </span>
 				</span>

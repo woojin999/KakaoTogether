@@ -2,7 +2,9 @@ package com.myweb.www.repository;
 
 import java.util.List;
 
+
 import com.myweb.www.domain.BoardVO;
+import com.myweb.www.domain.DonationVO;
 import com.myweb.www.domain.PagingVO;
 
 public interface BoardDAO {
@@ -10,6 +12,7 @@ public interface BoardDAO {
 	List<BoardVO> selectList(PagingVO pgvo);
 	BoardVO selectOne(long bno);
 	int update(BoardVO bvo);
+	int updateFinal(DonationVO dvo);
 	int delete(long bno);
 	int selectTotalCount(PagingVO pgvo);
 	long selectLastBno();

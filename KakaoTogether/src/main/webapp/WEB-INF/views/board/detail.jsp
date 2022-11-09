@@ -8,6 +8,7 @@
 
 <div id="wrap_content">
 	<c:set var = "bvo" value="${bdto.bvo }"/>
+	<span id="bnoVal" style="display: none;">${bvo.bno}</span>
 	<!-- Title Content -->
 	<div class="wrap_top_summary">
 		<div class="cover">
@@ -48,25 +49,23 @@
 			<span class="txt_state">${bvo.price }원 목표</span>
 		</div>
 		
-		<div class="comments_wrap">
-			<div class="num_box">
-				<span class="txt_tit">댓글</span>
-				<span class="txt_num">3</span>
-			</div>
-			<c:forEach var="comments" items="${commentsList}">
-				<div class="comments_box">
-					<span class="txt_info">
-						<span>woojin</span>
-						<span>3000원</span>
-						<span>2022-11-07</span>
-					</span>
-					<div class="txt_cmt">
-						<span>응원해요</span>
-					</div>
+		
+		
+		<!---- 댓글 ------>
+		<div class="body_cont">
+			<div class="cont_box" id="donaZone"></div>
+				<div class="body_cont" >  	
+				<div class="list_more">
+					<button type="button" data-page="1" id="moreBtn" class="link_round">
+  						더보기
+  					</button>
 				</div>
-			</c:forEach>
+  					
+ 				</div>
+			</div>
+			<!--------  -->
 		</div>
-	</div>
+	
 	<!-- 수정하기 btn -->
 	<%-- <c:if test="${content.writer == loginIdx}"> --%>
 		<div id="btn_update">
@@ -89,15 +88,16 @@
 			<span>기부하기</span>
 		</a>
 		
+		
 <!-- 모달 -->
 <div id="wrap_donation">
-	<form action="/donation.action" method="post" name="donationForm" class="form">
-		<input type="hidden" name="mIdx" value="${loginIdx}">
-		<input type="hidden" name="cIdx" value="${content.idx}">
+	<form action="/donation/register" method="post" name="donationForm" class="form">
+		<input type="hidden" id="bno" name="bno" value="${bvo.bno}">
+		<input type="hidden" id="mno" name="mno" value="${4}">
 		<div class="wrap_fund">
 			<div class="list_pay">
 				<span class="txt_tit">기부금 결제</span>
-				<a class="btn_close" onclick="donate_close()"><img src="${imgSrc}/btn_close.png"></a>
+				<a class="btn_close" onclick="donate_close()"><img src="/resources/image/btn_close.png"></a>
 				<span class="txt_info">무통장은 3천원, 기타 결제는 1천원부터 가능합니다.</span>
 				<ul>
 					<li><a onclick="changePrice(1000)"><span>+ 1천원</span></a></li>
@@ -109,7 +109,7 @@
 				
 				<span class="txt_price">원</span>
 				<span class="price">0</span>
-				<input type="hidden" name="price" value="0">
+				<input type="hidden" id="donation" name="donation" value="0">
 				<div class="reset"></div>
 			</div>
 			<div class="write_box">
@@ -118,11 +118,11 @@
 				<div class="reset"></div>
 			</div>
 			<div class="donation_info">
-				<span>결제 내역은 마이페이지에서 확인해 주세요</span>
+				<span>기부 내역은 마이페이지에서 확인해 주세요</span>
 			</div>
 		</div>
 		<div class="wrap_btn_type">
-			<a class="btn" onclick="donate_go()"><span>결제하기</span></a>
+			<button type="submit" class="btn" id="regBtn"><span>기부하기</span></button>
 		</div>
 	</form>
 </div>
@@ -132,7 +132,6 @@
 
 
 <script type="text/javascript">
-
 function donate_open(mIdx){
 	if (mIdx != 0){
 		$('#wrap_donation').css("display", "block");
@@ -146,7 +145,14 @@ function donate_close(){
 	$('#wrap_donation').css("display", "none");
 }
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+	getDonationList(document.getElementById('bnoVal').innerText);
+});
+</script>
 
+<script src="/resources/js/donation.register.js"></script>
+<script src="/resources/js/donation.list.js"></script>
 
 
 </div>

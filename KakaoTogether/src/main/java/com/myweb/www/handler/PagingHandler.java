@@ -1,5 +1,8 @@
 package com.myweb.www.handler;
 
+import java.util.List;
+
+import com.myweb.www.domain.DonationVO;
 import com.myweb.www.domain.PagingVO;
 
 import lombok.Getter;
@@ -15,10 +18,11 @@ public class PagingHandler {
 	
 	private int totalCount;
 	private PagingVO pgvo;
+	private List<DonationVO> donaList;
 	
-	public PagingHandler(int totalCount, PagingVO pgvo) {
-		this.totalCount = totalCount;
+	public PagingHandler(PagingVO pgvo,int totalCount) {
 		this.pgvo = pgvo;
+		this.totalCount = totalCount;
 		
 		this.endPage =(int) (Math.ceil(pgvo.getPageNo() / (10 * 1.0))) * 10;
 		this.startPage = endPage - 9;
@@ -31,5 +35,10 @@ public class PagingHandler {
 	
 		this.prev = startPage > 1;
 		this.next = endPage < realEndPage;
+	}
+	public PagingHandler(List<DonationVO> donaList,
+			 int totalCount, PagingVO pgvo) {
+		this(pgvo, totalCount);
+		this.donaList = donaList;
 	}
 }

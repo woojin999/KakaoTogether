@@ -10,5 +10,6 @@
 	<typeAlias type="com.myweb.www.domain.BoardVO" alias="bvo"/>
 	<typeAlias type="com.myweb.www.domain.PagingVO" alias="pgvo"/>
 	<typeAlias type="com.myweb.www.domain.FileVO" alias="fvo"/>
+	<typeAlias type="com.myweb.www.domain.DonationVO" alias="dvo"/>
 </typeAliases>
 </configuration>

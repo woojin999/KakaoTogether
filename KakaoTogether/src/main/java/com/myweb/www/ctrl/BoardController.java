@@ -56,7 +56,7 @@ public class BoardController {
 	public void list(Model model, PagingVO pgvo) {
 		model.addAttribute("list", bsv.getList(pgvo));
 		int totalCount = bsv.getTotalCount(pgvo);
-		model.addAttribute("pgn", new PagingHandler(totalCount, pgvo));
+		model.addAttribute("pgn", new PagingHandler(pgvo, totalCount));
 	}
 	
 	@GetMapping({"detail", "/modify"})
