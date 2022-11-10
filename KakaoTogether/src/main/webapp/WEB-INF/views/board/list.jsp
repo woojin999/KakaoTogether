@@ -10,13 +10,13 @@
 	<div id="wrap_tab">
 		<ul class="list_tab">
 			<li>
-				<a href="/fund/now?sort=1"><span class="on">모금중</span></a>
+				<a href="/board/list?state=A&topic="><span class="${pgn.pgvo.state eq 'A'?'on':''}">모금중</span></a>
 			</li>
 			<li>
-				<a href="/fund/epil?sort=1"><span>모금후기</span></a>
+				<a href="/board/list?state=B&topic="><span class="${pgn.pgvo.state eq 'B'?'on':''}">모금후기</span></a>
 			</li>
 			<li>
-				<a href="/Error404"><span>나눔캠페인</span></a>
+				<a href="/wait"><span>나눔캠페인</span></a>
 			</li>
 		</ul>
 	</div> <!-- end wrap_tab -->
@@ -26,21 +26,39 @@
 	<div class="inner_catelist">
 		<ul>
 			<li>
-				<a class=" ${pgn.pgvo.topic eq ''?'on':''}"  href="/board/list?topic=">
+				<a class=" ${pgn.pgvo.topic eq ''?'on':''}"  href="/board/list?state=${pgn.pgvo.state}&topic=">
 					<img src="/resources/image/ico_all.png">
 					<span>전체</span>
 				</a>
 			</li>
 			<li>
-				<a class=" ${pgn.pgvo.topic eq 'k'?'on':''}"   href="/board/list?topic=k">
+				<a class=" ${pgn.pgvo.topic eq 'k'?'on':''}"   href="/board/list?state=${pgn.pgvo.state}&topic=k">
 					<img src="/resources/image/ico_kidz.png">
 					<span>어린이</span>
 				</a>
 			</li>
 			<li>
-				<a class=" ${pgn.pgvo.topic eq 'o'?'on':''}"   href="/board/list?topic=o">
+				<a class=" ${pgn.pgvo.topic eq 'o'?'on':''}"   href="/board/list?state=${pgn.pgvo.state}&topic=o">
 					<img src="/resources/image/ico_old.png">
 					<span>어르신</span>
+				</a>
+			</li>
+			<li>
+				<a class=" ${pgn.pgvo.topic eq 'a'?'on':''}"   href="/board/list?state=${pgn.pgvo.state}&topic=a">
+					<img src="/resources/image/ico_accessible.png">
+					<span>장애인</span>
+				</a>
+			</li>
+			<li>
+				<a class=" ${pgn.pgvo.topic eq 'e'?'on':''}"   href="/board/list?state=${pgn.pgvo.state}&topic=e">
+					<img src="/resources/image/ico_earth.png">
+					<span>지구촌</span>
+				</a>
+			</li>
+			<li>
+				<a class=" ${pgn.pgvo.topic eq 'n'?'on':''}"   href="/board/list?state=${pgn.pgvo.state}&topic=n">
+					<img src="/resources/image/ico_neighborhood.png">
+					<span>어려운이웃</span>
 				</a>
 			</li>
 		</ul>
@@ -52,10 +70,10 @@
 	<div class="sort_cate">
 	 <%-- <input type="hidden" name="type" value="${pgn.pgvo.type}"> --%>
 		<span class="inner_sort_cate">
-			<a href="/board/list?type=a&topic=${pgn.pgvo.topic}">
+			<a href="/board/list?state=${pgn.pgvo.state}&topic=${pgn.pgvo.topic}&type=a">
 				<span class="box_sorting ${pgn.pgvo.type eq 'a'?'on':''}">최신순</span>
 			</a>
-			<a href="/board/list?type=b&topic=${pgn.pgvo.topic}">
+			<a href="/board/list?state=${pgn.pgvo.state}&topic=${pgn.pgvo.topic}&type=b">
 				<span class="box_sorting ${pgn.pgvo.type eq 'b'?'on':''}">종료임박순</span>
 			</a>
 		</span>

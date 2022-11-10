@@ -10,7 +10,7 @@
 	<nav id="wrap_topCate" class="" style="position: static; top: initial;">
 		<ul class="inner">
 			<li>
-				<a href="/board/list?topic=">
+				<a href="/board/list?state=A&topic=">
 					<span class="on">같이기부</span>
 				</a>
 			</li>
