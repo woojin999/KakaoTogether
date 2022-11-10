@@ -60,6 +60,6 @@ document.addEventListener('click', (e) => {
         e.preventDefault();
         const bnoVal = document.getElementById('bnoVal').innerText;
         const page = e.target.dataset.page;
-        getDonationList(bnoVal, parseInt(page)+1);
+        getDonationList(bnoVal, parseInt(page));
     }
 });
