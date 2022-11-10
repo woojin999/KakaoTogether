@@ -85,9 +85,17 @@
 			<span class="ico_share"><img src="/resources/image/ico_share.svg"></span>
 			<span class="txt_share">공유</span>
 		</a>
+		<c:if test="${bvo.state eq 'A'}">
 		<a class="btn_d" onclick="donate_open(${3333})">
 			<span>기부하기</span>
 		</a>
+		</c:if>
+		
+		<c:if test="${bvo.state eq 'B'}">
+		<a class="btn_d">
+			<span style="color: #444;">기부종료</span>
+		</a>
+		</c:if>
 		
 		
 <!-- 모달 -->

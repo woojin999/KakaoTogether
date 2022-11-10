@@ -4,6 +4,30 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.myweb.www.repository.BoardDAO">
 
+	<sql id="state">
+		<choose>
+			<when test="state != null">
+					<if test="state == 'A'.toString()">
+							and state = 'A'
+					</if>
+					<if test="state == 'B'.toString()">
+							and state = 'B' 
+					</if>
+			</when>
+		</choose>
+	</sql>
+	<sql id="countstate">
+		<choose>
+			<when test="state != null">
+					<if test="state == 'A'.toString()">
+							where state = 'A'
+					</if>
+					<if test="state == 'B'.toString()">
+							where state = 'B' 
+					</if>
+			</when>
+		</choose>
+	</sql>
 	<sql id="mainTopic">
 		<choose>
 			<when test="topic != null">
@@ -12,6 +36,15 @@
 					</if>
 					<if test="topic == 'o'.toString()">
 							and topic = 'olds' 
+					</if>
+					<if test="topic == 'a'.toString()">
+							and topic = 'accessible' 
+					</if>
+					<if test="topic == 'e'.toString()">
+							and topic = 'earth' 
+					</if>
+					<if test="topic == 'n'.toString()">
+							and topic = 'neighborhood' 
 					</if>
 			</when>
 		</choose>
@@ -24,6 +57,15 @@
 					</if>
 					<if test="topic == 'o'.toString()">
 							where topic = 'olds' 
+					</if>
+					<if test="topic == 'a'.toString()">
+							where topic = 'accessible' 
+					</if>
+					<if test="topic == 'e'.toString()">
+							where topic = 'earth' 
+					</if>
+					<if test="topic == 'n'.toString()">
+							where topic = 'neighborhood' 
 					</if>
 			</when>
 		</choose>
@@ -56,6 +98,7 @@
 	 from(
 	 	select bno from board where bno > 0 
 	 	
+	 	<include refid="state" />
 	 	<include refid="mainTopic" />
 	 	<include refid="sort" />
 	 	limit #{pageStart}, #{qty}
@@ -72,7 +115,8 @@
 	
 	<select id="selectTotalCount" resultType="int" parameterType="pgvo">
 		select count(bno) from board
-		<include refid="countTopic" />
+		<include refid="countstate" />
+		<include refid="mainTopic" />
 	</select>
 	
 	<select id="selectLastBno" resultType="long">

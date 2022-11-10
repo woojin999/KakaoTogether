@@ -47,6 +47,9 @@
 					<option value="0">주제 선택</option>
 					<option value="kids">어린이</option>
 					<option value="olds">어르신</option>
+					<option value="accessible">장애인</option>
+					<option value="earth">지구촌</option>
+					<option value="neighborhood">어려운이웃</option>
 				</select>
 				<span>&emsp;카테고리</span>
 				<select id="state" name="state" class="subtopic">
