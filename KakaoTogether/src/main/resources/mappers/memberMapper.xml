@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myweb.www.repository.MemberDAO">
+	<insert id="insert" parameterType="mvo">
+		insert into member
+		(user_id, pwd, user_name, phone, email, postnum, addr)
+		values
+		(#{userId}, #{pwd}, #{userName}, #{phone}, #{email}, #{postnum}, #{addr})
+	</insert>
+	
+	<select id="selectOne" parameterType="mvo" resultType="mvo"> 
+		select * from member 
+		where user_id = #{userId} and pwd = #{pwd}
+	</select>
+	
+	<select id="selectDetail" resultType="mvo" parameterType="long">
+		select * from member where mno = #{mno}
+	</select>
+</mapper>
