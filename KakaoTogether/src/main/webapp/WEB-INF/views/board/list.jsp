@@ -67,6 +67,7 @@
 
 <!-- 게시글 모음 -->
 <div class="group_fundlist">
+	<c:if test="${pgn.pgvo.state eq 'A'}">
 	<div class="sort_cate">
 	 <%-- <input type="hidden" name="type" value="${pgn.pgvo.type}"> --%>
 		<span class="inner_sort_cate">
@@ -78,6 +79,7 @@
 			</a>
 		</span>
 	</div>
+	</c:if>
 	<ul class="list_fund">
 		 <c:forEach items="${list }" var="bvo">
 		<li class="listcard">

@@ -34,24 +34,32 @@
 	
 	<nav id="wrap_util">
 		<ul class="inner">
-			<li>
-				<a class="link_util link_fund" href="/join">회원가입</a>
-			</li>
-			<li>
-				<a class="link_util link_login" href="/login">로그인</a>
-			</li>
-			
-			<li>
+		
+			<c:choose>
+				<c:when test="${ses.mno ne null && ses.mno ne '' }">
+				<li>
 				<a class="link_util link_fund" href="/board/register" 
 				 style="background-color:#dc287c; border-color:#dc287c;">등록하기</a>
 			</li>
 			<li>
-				<a class="link_util link_login" href="/mypage" 
+				<a class="link_util link_login" href="/member/mypage" 
 				 style="background-color:#333; border-color:#333; color: #fff;">마이페이지</a>
 			</li>
 			<li>
-				<a class="link_util link_login" href="/logout.action">로그아웃</a>
+				<a class="link_util link_login" href="/member/logout">로그아웃</a>
 			</li>
+				</c:when>
+				
+				<c:otherwise>
+				<li>
+				<a class="link_util link_fund" href="/member/register">회원가입</a>
+			</li>
+			<li>
+				<a class="link_util link_login" href="/member/login">로그인</a>
+			</li>
+				</c:otherwise>
+			</c:choose>
+			
 			<li>
 				<a class="btn_search" href="/search"><span class="ico_search"><img src="/resources/image/ico_search_01.svg"></span></a>
 			</li>
