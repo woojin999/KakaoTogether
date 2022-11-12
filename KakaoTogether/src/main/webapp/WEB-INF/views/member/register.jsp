@@ -40,9 +40,9 @@
 				<tr>
 					<td>주소</td>
 					<td class="td_addr">
-						<input type="text" name="postnum" id="postnum" placeholder="우편번호">
-						<input type="button" onclick="execDaumPostcode()" value="우편번호 찾기">
-						<input type="text" name="addr" id="addr" placeholder="도로명주소">
+						<input type="text" name="postnum" id="postnum" placeholder="우편번호" readonly="readonly">
+						<input type="button" onclick="execDaumPostcode()" value="우편번호 찾기" style="cursor: pointer;">
+						<input type="text" name="addr" id="addr" placeholder="도로명주소" readonly="readonly">
 					</td>
 				</tr>
 				<tr>
@@ -64,5 +64,6 @@
 		</form>
 	</div>
 </div>
-
+<script src="/resources/js/member.register.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <jsp:include page="../common/footer.jsp" />
