@@ -18,6 +18,8 @@ public class DonationVO {
 	private long donation; // 기부 금액
 	private String comment; // 기부 내용
 	private String donationAt; // 기부일
+	private String title;
+	private String boardImg;
 	
 	// register
 	public DonationVO(long mno, long bno, long donation, String comment) {
@@ -27,6 +29,16 @@ public class DonationVO {
 		this.comment = comment;
 	}
 	
+	// mydonalist
+	public DonationVO(long dno, long mno, long bno, long donation, String donationAt) {
+		this.dno = dno;
+		this.mno = mno;
+		this.bno = bno;
+		this.donation = donation;
+		this.donationAt = donationAt;
+	}
+	
 	// list AllArgsConstructor
+	
 	
 }

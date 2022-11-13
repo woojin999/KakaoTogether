@@ -21,9 +21,22 @@
 		on a.dno = b.dno
 	</select>
 	
+		<select id="selectMyList" resultType="dvo" parameterType="pgvo">
+	 select a.dno, a.mno, a.bno, donation, comment, donation_at, b.title, b.board_img
+	 from donation a
+	 left join board b
+	 on a.bno = b.bno
+	 where a.mno = #{mno}
+	</select>
+	
 	<select id="selectTotalCount" resultType="int">
 		select count(dno) from donation where bno = #{bno}
 	</select>
+	
+	<select id="selectMyTotalCount" resultType="int" parameterType="pgvo">
+		select count(dno) from donation where mno = #{mno}
+	</select>
+	
 	<select id="selectBno" resultType="long">
 		select bno from donation where dno = #{dno}
 	</select>
