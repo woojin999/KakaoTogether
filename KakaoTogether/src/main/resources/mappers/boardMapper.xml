@@ -105,6 +105,16 @@
 	 ) a left join board b
 	 on a.bno = b.bno
 	</select>
+	<select id="selectMyList" resultType="bvo" parameterType="pgvo">
+	 select a.bno, mno, title, writer, price, final_price, board_img
+	 from(
+	 	select bno from board where bno > 0 
+	 	<include refid="sort" />
+	 	limit #{pageStart}, #{qty}
+	 ) a left join board b
+	 on a.bno = b.bno
+	 where b.mno = #{mno}
+	</select>
 	
 	<select id="selectOne" resultType="bvo">
 			select bno, mno, title, sub_title, writer, topic, state, description, 
@@ -117,6 +127,10 @@
 		select count(bno) from board
 		<include refid="countstate" />
 		<include refid="mainTopic" />
+	</select>
+	
+	<select id="selectMyTotalCount" resultType="int" parameterType="pgvo">
+		select count(bno) from board where mno = #{mno}
 	</select>
 	
 	<select id="selectLastBno" resultType="long">

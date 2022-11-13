@@ -18,4 +18,18 @@
 	<select id="selectDetail" resultType="mvo" parameterType="long">
 		select * from member where mno = #{mno}
 	</select>
+	
+	<!-- <select id="selectDonaList" resultType="dvo">
+		select a.dno, d.bno, d.donation, b.title, donation_at
+		from (
+			select dno from donation
+			order by dno desc
+			limit #{pgvo.pageStart}, #{pgvo.qty}
+		) a left join donation d
+		on a.dno = d.dno
+		inner join board b
+		on d.bno = b.bno
+		where d.mno = #{mno}
+	</select> -->
+	
 </mapper>
