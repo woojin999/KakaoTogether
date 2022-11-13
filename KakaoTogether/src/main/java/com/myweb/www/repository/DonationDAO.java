@@ -11,6 +11,8 @@ import com.myweb.www.domain.PagingVO;
 public interface DonationDAO {
 	int insert(DonationVO dvo);
 	List<DonationVO> selectList(@Param("bno") long bno, @Param("pgvo") PagingVO pgvo);
+	List<DonationVO> selectMyList(PagingVO pgvo);
 	int selectTotalCount(long bno);
+	int selectMyTotalCount(PagingVO pgvo);
 	long selectBno(long dno);
 }

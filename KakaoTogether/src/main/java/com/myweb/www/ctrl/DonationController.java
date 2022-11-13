@@ -53,6 +53,15 @@ public class DonationController {
 		PagingVO pgvo = new PagingVO(pageNo, 10);
 		return new ResponseEntity<PagingHandler>(dsv.spread(bno, pgvo), HttpStatus.OK);
 	}
+	
+	@GetMapping("/list/{mno}")
+	public String mylist(Model model, PagingVO pgvo, @PathVariable("mno") long mno) {
+		model.addAttribute("list", dsv.getMyList(pgvo));
+		int totalCount = dsv.getMyTotalCount(pgvo);
+		model.addAttribute("pgn", new PagingHandler(pgvo, totalCount));
+		return "/donation/list";
+	}
+	
 }
 
 

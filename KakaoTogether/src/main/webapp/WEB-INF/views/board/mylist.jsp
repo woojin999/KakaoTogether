@@ -16,7 +16,7 @@
 				<a href="/board/mylist/${ses.mno }"><span>기부 글 작성내역</span></a>
 			</li>
 			<li>
-				<a href="/wait"><span>내 기부내역</span></a>
+				<a href="/donation/list/${ses.mno }"><span>내 기부내역</span></a>
 			</li>
 		</ul>
 	</div> 
