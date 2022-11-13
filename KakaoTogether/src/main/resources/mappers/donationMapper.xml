@@ -11,7 +11,7 @@
 	</insert>
 	
 	<select id="selectList" resultType="dvo">
-		select a.dno, b.mno, b.bno, donation, comment, donation_at
+		select a.dno, b.mno, b.bno, donation, comment, donation_at, m.user_name
 		from (
 			select dno from donation
 			where bno = #{bno}
@@ -19,6 +19,8 @@
 			limit #{pgvo.pageStart}, #{pgvo.qty}
 		) a left join donation b
 		on a.dno = b.dno
+		left join member m
+		on b.mno = m.mno
 	</select>
 	
 		<select id="selectMyList" resultType="dvo" parameterType="pgvo">
