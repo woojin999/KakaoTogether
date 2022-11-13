@@ -10,11 +10,13 @@ import com.myweb.www.domain.PagingVO;
 public interface BoardDAO {
 	int insert(BoardVO bvo);
 	List<BoardVO> selectList(PagingVO pgvo);
+	List<BoardVO> selectMyList(PagingVO pgvo);
 	BoardVO selectOne(long bno);
 	int update(BoardVO bvo);
 	int updateFinal(DonationVO dvo);
 	int delete(long bno);
 	int selectTotalCount(PagingVO pgvo);
+	int selectMyTotalCount(PagingVO pgvo);
 	long selectLastBno();
 	int cheer(BoardVO bvo);
 }

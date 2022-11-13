@@ -43,6 +43,11 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
+	public List<BoardVO> getMyList(PagingVO pgvo) {
+		return bdao.selectMyList(pgvo);
+	}
+	
+	@Override
 	public BoardDTO getDetail(long bno) {
 		
 		return new BoardDTO(bdao.selectOne(bno)
@@ -87,6 +92,13 @@ public class BoardServiceImpl implements BoardService {
 	public int cheerup(BoardVO bvo) {
 		return bdao.cheer(bvo);
 	}
+
+	@Override
+	public int getMyTotalCount(PagingVO pgvo) {
+		return bdao.selectMyTotalCount(pgvo);
+	}
+
+	
 
 	
 

@@ -66,6 +66,14 @@ public class BoardController {
 		model.addAttribute("pgn", new PagingHandler(pgvo, totalCount));
 	}
 	
+	@GetMapping("/mylist/{mno}")
+	public String mylist(Model model, PagingVO pgvo, @PathVariable("mno") long mno) {
+		model.addAttribute("list", bsv.getMyList(pgvo));
+		int totalCount = bsv.getMyTotalCount(pgvo);
+		model.addAttribute("pgn", new PagingHandler(pgvo, totalCount));
+		return "/board/mylist";
+	}
+	
 	@GetMapping({"detail", "/modify"})
 	public void detail(@RequestParam("bno") long bno, Model model,
 			@ModelAttribute("pgvo") PagingVO pgvo) {
