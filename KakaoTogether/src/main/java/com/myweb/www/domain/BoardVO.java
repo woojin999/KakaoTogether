@@ -33,6 +33,7 @@ public class BoardVO {
 	private String boardImg; // 사진
 	private int fileCount;
 	private int cheer; // 응원수
+	private String userName;
 	
 	// register
 	public BoardVO(long mno, String title, String subTitle, String writer, String topic, String state, String description, long price,
