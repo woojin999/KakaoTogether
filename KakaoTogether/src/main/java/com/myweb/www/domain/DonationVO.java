@@ -20,6 +20,7 @@ public class DonationVO {
 	private String donationAt; // 기부일
 	private String title;
 	private String boardImg;
+	private String userName;
 	
 	// register
 	public DonationVO(long mno, long bno, long donation, String comment) {

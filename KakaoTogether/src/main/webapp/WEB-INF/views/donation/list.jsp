@@ -14,7 +14,7 @@
 				<a href="/member/mypage?mno=${ses.mno }"><span>내정보</span></a>
 			</li>
 			<li>
-				<a href="/board/mylist/${ses.mno }"><span>기부 글 작성내역</span></a>
+				<a href="/board/mylist/${ses.mno }"><span>기부글 작성내역</span></a>
 			</li>
 			<li>
 				<a href="/donation/list/${ses.mno }"><span>내 기부내역</span></a>
@@ -23,10 +23,17 @@
 	</div> 
 </div> 
 
+<div style="width: 600px; padding: 10px; margin:auto; text-align:center; font-family: KakaoBold; font-size: 30px; color: #555;">
+	<div style="margin-top: 20px;">
+		<span>기부 내역</span><br>
+	</div>
+</div>
+
 <div id="mydonation_wrap">
 	<ul>
 		<c:forEach var="dvo" items="${list}" > 
 		<li>
+		<a href="/board/detail?bno=${dvo.bno }" class="link_content">
 			<div class="box">
 				<span class="thumb_img">
 					<img src="/upload/${fn:replace(dvo.boardImg,'\\','/')}">
@@ -45,7 +52,7 @@
 				</div>
 				<div class="reset"></div>
 			</div>
-			
+			</a>
 		</li>
 		</c:forEach> 
 	</ul>

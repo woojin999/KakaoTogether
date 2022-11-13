@@ -89,7 +89,7 @@
 				</span>
 				<span class="text_box">
 					<span class="title">${bvo.title}</span>
-					<span class="agency">${bvo.writer}</span>
+					<span class="agency">${bvo.userName}</span>
 					<input type="hidden" id="mno" name="mno" value="${2}">
 					<span class="state">
 						<span class="state_bar"></span>
@@ -103,7 +103,7 @@
 								<span class="state_ing" style="width: 100%;"></span>
 							</c:if>
 					</span>
-					<span class="price_goal"> ${bvo.finalPrice} </span>
+					<span class="price_goal"><fmt:formatNumber value="${bvo.finalPrice}" pattern="#,###" /></span>
 				</span>
 			</a>
 		</li>
@@ -113,16 +113,16 @@
 						<ul>
 							<c:if test="${pgn.prev }">
 								<li><a
-									href="/board/list/?pageNo=${pgn.startPage-1 }&qty=${pgn.pgvo.qty }&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}">이전</a></li>
+									href="/board/list/?pageNo=${pgn.startPage-1 }&qty=${pgn.pgvo.qty }&state=${pgn.pgvo.state}&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}">이전</a></li>
 							</c:if>
 							<c:forEach begin="${pgn.startPage }" end="${pgn.endPage }"
 								var="i">
 								<li class="${pgn.pgvo.pageNo == i ? 'active' : '' }" style="margin-right: 10px"><a
-									href="/board/list/?pageNo=${i }&qty=${pgn.pgvo.qty}&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}" >${i }</a></li>
+									href="/board/list/?pageNo=${i }&qty=${pgn.pgvo.qty}&state=${pgn.pgvo.state}&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}" >${i }</a></li>
 							</c:forEach>
 							<c:if test="${pgn.next }">
 								<li><a
-									href="/board/list/?pageNo=${pgn.endPage+1 }&qty=${pgn.pgvo.qty }&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}">다음</a></li>
+									href="/board/list/?pageNo=${pgn.endPage+1 }&qty=${pgn.pgvo.qty }&state=${pgn.pgvo.state}&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}">다음</a></li>
 							</c:if>
 						</ul>
 					</div>

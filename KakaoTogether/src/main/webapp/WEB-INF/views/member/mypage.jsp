@@ -13,7 +13,7 @@
 				<a href="/member/mypage?mno=${ses.mno }"><span>내 정보</span></a>
 			</li>
 			<li>
-				<a href="/board/mylist/${ses.mno }"><span>기부 글 작성내역</span></a>
+				<a href="/board/mylist/${ses.mno }"><span>기부글 작성내역</span></a>
 			</li>
 			<li>
 				<a href="/donation/list/${ses.mno }"><span>내 기부내역</span></a>
@@ -22,11 +22,13 @@
 	</div> <!-- end wrap_tab -->
 </div> <!-- end contents -->
 
+<div style="width: 600px; padding: 10px; margin:auto; text-align:center; font-family: KakaoBold; font-size: 30px; color: #555;">
+	<div style="margin-top: 20px; margin-bottom: -40px">
+		<span>내 정보</span><br>
+	</div>
+</div>
 <div id="page_join" style="padding-top:0px">
 	<div id="main">
-		<div class="title">
-			<span class="light"> 내 정보 </span>
-		</div>
 		<form id="join_form" name="joinForm" >
 			<input type="hidden" name="mno" value="${ses.mno }">
 			<table class="join_table">
