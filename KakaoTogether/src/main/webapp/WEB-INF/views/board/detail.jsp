@@ -14,7 +14,7 @@
 		<div class="cover">
 			<div class="front-pack">
 				<span class="tit_visual">${bvo.title}</span>
-				<span class="txt_sponsor">${bvo.writer}</span>
+				<span class="txt_sponsor">${bvo.userName}</span>
 				<div class="hash_group">
 					<a class="topic_hash">${bvo.topic}</a>
 					<a class="link_hash">${bvo.keyword1}</a>
@@ -45,8 +45,8 @@
 		</div>
 		
 		<div class="price_box">
-			<span class="txt_price">${bvo.finalPrice }<span class="txt_won">원</span></span>
-			<span class="txt_state">${bvo.price }원 목표</span>
+			<span class="txt_price"><fmt:formatNumber value="${bvo.finalPrice}" pattern="#,###" /><span class="txt_won">원</span></span>
+			<span class="txt_state" ><fmt:formatNumber value="${bvo.price }" pattern="#,###" />원 목표</span>
 		</div>
 		
 		
@@ -102,7 +102,7 @@
 <div id="wrap_donation">
 	<form action="/donation/register" method="post" name="donationForm" class="form">
 		<input type="hidden" id="bno" name="bno" value="${bvo.bno}">
-		<input type="hidden" id="mno" name="mno" value="${4}">
+		<input type="hidden" id="mno" name="mno" value="${ses.mno}">
 		<div class="wrap_fund">
 			<div class="list_pay">
 				<span class="txt_tit">기부금 결제</span>

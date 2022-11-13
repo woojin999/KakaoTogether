@@ -14,7 +14,7 @@
 	<input type="hidden" name="writer" value="${writer}"> 
 	<input type="hidden" name="tTopic" value="${topic}">
 	<input type="hidden" name="sSubtopic" value="${subtopic}"> --%>
-	<input type="hidden" name="mno" id="mno" value="22"> 
+	<input type="hidden" name="mno" id="mno" value="${ses.mno }"> 
 	<table class="main">
 		<tr>
 			<td colspan="3">
@@ -35,7 +35,7 @@
 		</tr>
 		<tr class="tr_oneLine">
 			<th><span>작성자</span></th>
-			<td colspan="2"><div class="bottom_line"><input type="text" id="writer" name="writer" value="tester" readonly></div></td>
+			<td colspan="2"><div class="bottom_line"><input type="text" id="writer" name="writer" ></div></td>
 		</tr>
 	
 		<tr class="tr_oneLine">
@@ -69,19 +69,7 @@
 			<th><span>목표 금액</span></th>
 			<td colspan="2"><div class="bottom_line"><input type="text" name="price" placeholder="단위를 제외한 숫자를 적어주세요 (ex. 1000000)" autocomplete="off"></div></td>
 		</tr>
-		<%-- <tr class="tr_oneLine">
-			<th>썸네일 등록</th>
-			<td colspan="2"><div class="bottom_line"><input type="file" id="image0" name="image0" value="${image0}">${image0}</div></td>
-		</tr>
-		<tr class="tr_oneLine">
-			<th>주제1</th>
-			<td colspan="2"><div class="bottom_line"><input type="text" id="head1" name="head1" placeholder="주제를 입력해주세요" value="${head1}"></div></td>
-		</tr> --%>
 
-<%-- 		<tr class="tr_oneLine">
-			<th>첨부영상</th>
-			<td colspan="2"><div class="bottom_line"><input type="text" id="youtube1" name="youtube1" value="${youtube1}" placeholder="유튜브 url을 입력해주세요"></div></td>
-		</tr> --%>
 		<tr id="tag_wrap" >
 			<th class="tr_oneLine">태그 설정</th>
 			<td colspan="2">
@@ -103,9 +91,7 @@
 	
 	<div class="wrap_btxn">
 		<button type="submit" class="submit_box" id="regBtn"><span>등록하기</span></button>
-		<!-- <a class="submit_box" onclick="writeForm_submit()">
-			등록하기
-		</a> -->
+
 	</div>
 	
 </div>
