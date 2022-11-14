@@ -31,4 +31,18 @@ public class BoardReposTest {
 		log.info(">>> Test of insert board : {} ", isUp > 0 ? "OK":"FAIL");
 	}
 	
+	@Test
+	public void selectBoardTest() throws Exception {
+		BoardVO bvo = bdao.selectOne(2L);
+		log.info(">>>> selectBoardTest > {}", bvo);
+	}
+	
+	@Test
+	public void updateBoardTest() throws Exception {
+		int isUp = bdao.update(new BoardVO(2,
+				"updatetitle","updatesub", "updatewrter","updatetopic","updatest",
+				"updateesc",3333333,"updatekey1","updatekey2","updatekey3","updatedate","updateimg"));
+		log.info(">>> Test of update board : {} ", isUp > 0 ? "OK":"FAIL");
+	}
+	
 }
