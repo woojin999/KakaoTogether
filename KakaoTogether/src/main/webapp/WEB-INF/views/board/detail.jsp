@@ -75,7 +75,36 @@
 	
 	<!-- 응원하기 하단바 -->
 	<div class="fund_float">
-	<a>
+		
+		
+		<c:if test="${ses.mno eq null}">
+		
+		<a href="/member/login">
+		<button type="button" class="btn_c chrBtn" id="chrBtn" data-bno="${bvo.bno }">
+			<span class="ico_cheer"><img src="/resources/image/ico_cheer.svg"></span>
+			<span class="txt_cheer">응원</span>
+			<span class="txt_cheer chrnum" id="chrnum" style="font-size: 15px; color: lightgray;">${bvo.cheer}</span>
+		</button></a>
+		<a class="btn_s" href="/member/login">
+			<span class="ico_share"><img src="/resources/image/ico_share.svg"></span>
+			<span class="txt_share">공유</span>
+		</a>
+		<c:if test="${bvo.state eq 'A'}">
+		<a class="btn_d" href="/member/login">
+			<span>기부하기</span>
+		</a>
+		</c:if>
+		
+		<c:if test="${bvo.state eq 'B'}">
+		<a class="btn_d" href="/member/login">
+			<span style="color: #444;">기부종료</span>
+		</a>
+		</c:if>
+		
+		</c:if>
+		
+		<c:if test="${ses.mno ne null}">
+		<a>
 		<button type="button" class="btn_c chrBtn" id="chrBtn" data-bno="${bvo.bno }">
 			<span class="ico_cheer"><img src="/resources/image/ico_cheer.svg"></span>
 			<span class="txt_cheer">응원</span>
@@ -96,7 +125,7 @@
 			<span style="color: #444;">기부종료</span>
 		</a>
 		</c:if>
-		
+		</c:if>
 		
 <!-- 모달 -->
 <div id="wrap_donation">
