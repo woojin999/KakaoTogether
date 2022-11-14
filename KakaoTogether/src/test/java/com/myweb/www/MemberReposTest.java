@@ -27,4 +27,16 @@ public class MemberReposTest {
 		
 		log.info(">>> Test of insert Member : {} ", isUp > 0 ? "OK":"FAIL");
 	}
+	
+	@Test
+	public void LoginMemberTest() throws Exception {
+		MemberVO mvo = mdao.selectOne(new MemberVO("test1", "1234"));
+		log.info(">>>> LoginMemberTest > {}", mvo);
+	}
+	
+	@Test
+	public void getDetailMemberTest() throws Exception {
+		MemberVO mvo = mdao.selectDetail(2);
+		log.info(">>>> DetailMemberTest > {}", mvo);
+	}
 }
