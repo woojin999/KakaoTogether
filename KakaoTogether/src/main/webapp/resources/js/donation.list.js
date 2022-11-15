@@ -19,7 +19,7 @@ function getDonationList(bnoVal, pageNo=1) {
         if(result.donaList.length && pageNo == 1) {
             let tag ='<span class="tit_head" style="margin-bottom: 15px">댓글</span>';
             for(const dvo of result.donaList) {
-                tag += `<span class="txt_info" style="font-size: 16px; font-weight: bold; ">${dvo.userName}</span>`
+                tag += `<span class="txt_info" style="font-size: 16px; font-weight: bold; ">${dvo.donaName}</span>`
                 tag += `<span style="margin-left: 10px;"> ${dvo.donation}원</span>`
                 tag += `<span style="float: right">${trimSendAt(dvo.donationAt)}</span>`
                 tag += `<div class="txt_cmt" style="margin-top: 10px; margin-bottom: 10px; padding: 13px 14px 17px; border-radius: 10px; background-color: #f7f8f9; word-break: break-word;">`
@@ -32,7 +32,7 @@ function getDonationList(bnoVal, pageNo=1) {
         else if(pageNo > 1){
             let tag ='';
             for(const dvo of result.donaList) {
-                tag += `<span class="txt_info" style="font-size: 16px; font-weight: bold; ">${dvo.userName}</span>`
+                tag += `<span class="txt_info" style="font-size: 16px; font-weight: bold; ">${dvo.donaName}</span>`
                 tag += `<span style="margin-left: 10px;"> ${dvo.donation}원</span>`
                 tag += `<span style="float: right">${trimSendAt(dvo.donationAt)}</span>`
                 tag += `<div class="txt_cmt" style="margin-top: 10px; margin-bottom: 10px; padding: 13px 14px 17px; border-radius: 10px; background-color: #f7f8f9; word-break: break-word;">`

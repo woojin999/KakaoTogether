@@ -21,22 +21,25 @@ public class DonationVO {
 	private String title;
 	private String boardImg;
 	private String userName;
+	private String donaName;
 	
 	// register
-	public DonationVO(long mno, long bno, long donation, String comment) {
+	public DonationVO(long mno, long bno, long donation, String comment, String donaName) {
 		this.mno = mno;
 		this.bno = bno;
 		this.donation = donation;
 		this.comment = comment;
+		this.donaName = donaName;
 	}
 	
 	// mydonalist
-	public DonationVO(long dno, long mno, long bno, long donation, String donationAt) {
+	public DonationVO(long dno, long mno, long bno, long donation, String donationAt, String donaName) {
 		this.dno = dno;
 		this.mno = mno;
 		this.bno = bno;
 		this.donation = donation;
 		this.donationAt = donationAt;
+		this.donaName = donaName;
 	}
 	
 	// list AllArgsConstructor
