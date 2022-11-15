@@ -8,8 +8,8 @@
 
 <div id="page_login">
 	<div id="main">
-		<div class="title">
-			<span class="bold">회원 로그인</span>
+		<div class="title" style="text-align: center;">
+			<span class="bold" >회원 로그인</span>
 		</div>
 		<form action="/member/login" id="login_form" name="loginForm" method="post">
 			<input type="hidden" name="next">
@@ -20,16 +20,34 @@
 				<div style="margin-top: 20px;"><input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요" autocomplete="off"></div>
 			</div>
 			<div class="wrap_btn" >
-				<button type="submit" class="submit_box" style="width: 100%">로그인</button>
+				<button type="submit" class="submit_box" style="width: 100%; font-size: 20px; border-radius: 10px;">로그인</button>
 				<span class="line_or">
 					<span class="lineL"></span>
 					<span class="txt_or">또는</span>
 					<span class="lineR"></span>
+					<c:if test="${userId eq null }">
+						<a href="https://kauth.kakao.com/oauth/authorize?client_id=c6a565a9fd74e9db2346c1c630dd5faf&redirect_uri=http://localhost:8090/member/kakaologin&response_type=code">
+							<img alt="" src="/resources/image/kakao_login_large_wide.png" style="width: 100%; padding-top: 10px;">
+						</a>
+					</c:if>
 				</span>
 			</div>
 		</form>
 		
 	</div>
 </div>
+
+
+
+
+<c:if test="${userId ne null }">
+	<form name ="logout" action="/member/kakaologout">
+		<input type="submit" value="로그아웃"><br>
+		<span>${userId } u</span><br>
+		<span>${userNickname } nu</span><br>
+		<span>${userMno } eea</span><br>
+		<span>${id } d</span>
+	</form>
+</c:if>
 
 <jsp:include page="../common/footer.jsp" />
