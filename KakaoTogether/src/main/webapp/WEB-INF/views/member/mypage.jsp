@@ -10,13 +10,13 @@
 	<div id="wrap_tab">
 		<ul class="list_tab">
 			<li>
-				<a href="/member/mypage?mno=${ses.mno }"><span>내 정보</span></a>
+				<a href="/member/mypage?mno=${ses.mno }${userMno }"><span>내 정보</span></a>
 			</li>
 			<li>
-				<a href="/board/mylist/${ses.mno }"><span>기부글 작성내역</span></a>
+				<a href="/board/mylist/${ses.mno }${userMno }"><span>기부글 작성내역</span></a>
 			</li>
 			<li>
-				<a href="/donation/list/${ses.mno }"><span>내 기부내역</span></a>
+				<a href="/donation/list/${ses.mno }${userMno }"><span>내 기부내역</span></a>
 			</li>
 		</ul>
 	</div> <!-- end wrap_tab -->
@@ -30,14 +30,14 @@
 <div id="page_join" style="padding-top:0px">
 	<div id="main">
 		<form id="join_form" name="joinForm" >
-			<input type="hidden" name="mno" value="${ses.mno }">
+			<input type="hidden" name="mno" value="${ses.mno }${userMno }">
 			<table class="join_table">
 				<tr>
 					<td class="item_th">
 						<div><span>이름</span></div>
 					</td>
 					<td class="item_box">
-						<div><input readonly="readonly" id="username" name="username" value="${mvo.userName }"></div>
+						<div><input readonly="readonly" id="username" name="username" value="${mvo.userName }${userNickname }"></div>
 					</td>
 				</tr>
 				<tr>
@@ -45,7 +45,7 @@
 						<div><span>아이디</span></div>
 					</td>
 					<td class="item_box">
-						<div><input readonly="readonly" id="userid" name="userid" onkeyup="idCheck()" value="${mvo.userId }"></div>
+						<div><input readonly="readonly" id="userid" name="userid" onkeyup="idCheck()" value="${mvo.userId }${userId }"></div>
 					</td>
 				</tr>
 				<tr>
@@ -73,7 +73,7 @@
 				<tr>
 					<td class="item_th"><div><span>이메일</span></div></td>
 					<td class="item_box">
-						<div><input readonly="readonly" type="text" name="email" id="email" value="${mvo.email }" autocomplete="off"></div>
+						<div><input readonly="readonly" type="text" name="email" id="email" value="${mvo.email }${userId }" autocomplete="off"></div>
 					</td>
 				</tr>
 				<tr>

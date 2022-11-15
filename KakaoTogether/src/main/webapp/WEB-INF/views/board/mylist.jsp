@@ -10,13 +10,13 @@
 	<div id="wrap_tab">
 		<ul class="list_tab">
 			<li>
-				<a href="/member/mypage?mno=${ses.mno }"><span>내정보</span></a>
+				<a href="/member/mypage?mno=${ses.mno }${userMno }"><span>내정보</span></a>
 			</li>
 			<li>
-				<a href="/board/mylist/${ses.mno }"><span>기부글 작성내역</span></a>
+				<a href="/board/mylist/${ses.mno }${userMno }"><span>기부글 작성내역</span></a>
 			</li>
 			<li>
-				<a href="/donation/list/${ses.mno }"><span>내 기부내역</span></a>
+				<a href="/donation/list/${ses.mno }${userMno }"><span>내 기부내역</span></a>
 			</li>
 		</ul>
 	</div> 
