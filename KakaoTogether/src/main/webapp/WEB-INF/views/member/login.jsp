@@ -14,10 +14,10 @@
 		<form action="/member/login" id="login_form" name="loginForm" method="post">
 			<input type="hidden" name="next">
 			<div class="item_box"> 
-				<div><input type="text" id="userId" name="userId" placeholder="아이디를 입력하세요" autocomplete="off"></div>
+				<div><input type="text" id="userId" name="userId" placeholder="아이디를 입력하세요" autocomplete="off" required="required"></div>
 			</div>
 			<div class="item_box">
-				<div style="margin-top: 20px;"><input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요" autocomplete="off"></div>
+				<div style="margin-top: 20px;"><input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요" autocomplete="off" required="required"></div>
 			</div>
 			<div class="wrap_btn" >
 				<button type="submit" class="submit_box" style="width: 100%; font-size: 20px; border-radius: 10px;">로그인</button>
@@ -37,17 +37,5 @@
 	</div>
 </div>
 
-
-
-
-<c:if test="${userId ne null }">
-	<form name ="logout" action="/member/kakaologout">
-		<input type="submit" value="로그아웃"><br>
-		<span>${userId } u</span><br>
-		<span>${userNickname } nu</span><br>
-		<span>${userMno } eea</span><br>
-		<span>${id } d</span>
-	</form>
-</c:if>
 
 <jsp:include page="../common/footer.jsp" />

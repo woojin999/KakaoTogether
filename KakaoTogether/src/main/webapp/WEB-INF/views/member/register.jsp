@@ -18,7 +18,7 @@
 						<div><span>이름</span></div>
 					</td>
 					<td class="item_box">
-						<div><input type="text" id="userName" name="userName" placeholder="이름을 입력하세요" autocomplete="off"></div>
+						<div><input type="text" id="userName" name="userName" placeholder="이름을 입력하세요" autocomplete="off" required="required"></div>
 					</td>
 				</tr>
 				<tr>
@@ -26,7 +26,7 @@
 						<div><span>아이디</span></div>
 					</td>
 					<td class="item_box">
-						<div><input type="text" id="userId" name="userId"  placeholder="아이디를 입력하세요" autocomplete="off"></div>
+						<div><input type="text" id="userId" name="userId"  placeholder="아이디를 입력하세요" autocomplete="off" required="required"></div>
 					</td>
 				</tr>
 				<tr>
@@ -34,7 +34,7 @@
 						<div><span>비밀번호</span></div>
 					</td>
 					<td class="item_box">
-						<div><input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요" autocomplete="off"></div>
+						<div><input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요" autocomplete="off" required="required"></div>
 					</td>
 				</tr>
 				<tr>
@@ -54,7 +54,7 @@
 				<tr>
 					<td class="item_th">이메일</td>
 					<td class="item_box">
-						<div><input type="text" id="email" name="email" placeholder="이메일을 입력하세요" autocomplete="off"></div>
+						<div><input type="text" id="email" name="email" placeholder="이메일을 입력하세요" autocomplete="off" required="required"></div>
 					</td>
 				</tr>
 			</table>
