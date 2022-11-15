@@ -49,11 +49,15 @@
 			<li>
 				<span class="link_util link_login">${userNickname } 님</span>
 			</li>
+			<li>
+				<a class="link_util link_login" href="/member/kakaologout">로그아웃</a>
+			</li>
 			</c:if>
+			<c:if test="${ses.mno ne null }">
 			<li>
 				<a class="link_util link_login" href="/member/logout">로그아웃</a>
 			</li>
-			
+			</c:if>
 				</c:when>
 				
 				<c:otherwise>
