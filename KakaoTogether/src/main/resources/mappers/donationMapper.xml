@@ -5,13 +5,13 @@
 <mapper namespace="com.myweb.www.repository.DonationDAO">
 	<insert id="insert" parameterType="dvo">
 		insert into donation
-		(mno, bno, donation, comment)
+		(mno, bno, donation, comment, dona_name)
 		values
-		(#{mno}, #{bno}, #{donation}, #{comment})
+		(#{mno}, #{bno}, #{donation}, #{comment}, #{donaName})
 	</insert>
 	
 	<select id="selectList" resultType="dvo">
-		select a.dno, b.mno, b.bno, donation, comment, donation_at, m.user_name
+		select a.dno, b.mno, b.bno, donation, comment, donation_at, dona_name, m.user_name
 		from (
 			select dno from donation
 			where bno = #{bno}
