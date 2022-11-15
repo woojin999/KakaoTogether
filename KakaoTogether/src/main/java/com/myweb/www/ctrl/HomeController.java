@@ -56,8 +56,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/wait", method = RequestMethod.GET)
-	public String waiter() {
+	public String waiting() {
 		return "wait";
+	}
+	@RequestMapping(value = "/more", method = RequestMethod.GET)
+	public String more() {
+		return "more";
 	}
 	
 }
