@@ -89,7 +89,7 @@
 				</span>
 				<span class="text_box">
 					<span class="title">${bvo.title}</span>
-					<span class="agency">${bvo.userName}</span>
+					<span class="agency">${bvo.writer}</span>
 					<input type="hidden" id="mno" name="mno" value="${2}">
 					<span class="state">
 						<span class="state_bar"></span>
