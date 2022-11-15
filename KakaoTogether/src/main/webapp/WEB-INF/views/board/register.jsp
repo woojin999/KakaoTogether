@@ -14,7 +14,7 @@
 	<input type="hidden" name="writer" value="${writer}"> 
 	<input type="hidden" name="tTopic" value="${topic}">
 	<input type="hidden" name="sSubtopic" value="${subtopic}"> --%>
-	<input type="hidden" name="mno" id="mno" value="${ses.mno }"> 
+	<input type="hidden" name="mno" id="mno" value="${ses.mno }${userMno }"> 
 	<table class="main">
 		<tr>
 			<td colspan="3">
@@ -27,15 +27,15 @@
 		</tr>
 		<tr class="tr_oneLine">
 			<th><span>제목</span></th>
-			<td colspan="2"><div class="bottom_line"><input  id="title" name="title" placeholder="제목을 입력해주세요" ></div></td>
+			<td colspan="2"><div class="bottom_line"><input  id="title" name="title" placeholder="제목을 입력해주세요" required="required"></div></td>
 		</tr>
 		<tr class="tr_oneLine">
 			<th><span>소제목</span></th>
-			<td colspan="2"><div class="bottom_line"><input  id="subTitle" name="subTitle" placeholder="소제목을 입력해주세요" ></div></td>
+			<td colspan="2"><div class="bottom_line"><input  id="subTitle" name="subTitle" placeholder="소제목을 입력해주세요" required="required"></div></td>
 		</tr>
 		<tr class="tr_oneLine">
 			<th><span>작성자</span></th>
-			<td colspan="2"><div class="bottom_line"><input type="text" id="writer" name="writer" ></div></td>
+			<td colspan="2"><div class="bottom_line"><input type="text" id="writer" name="writer" value="${userNickname }${ses.userName}" required="required"></div></td>
 		</tr>
 	
 		<tr class="tr_oneLine">
@@ -63,17 +63,17 @@
 		</tr>
 		<tr>
 			<th>본문</th>
-			<td colspan="2"><textarea name="description" placeholder="내용을 입력해주세요"></textarea></td>
+			<td colspan="2"><textarea name="description" placeholder="내용을 입력해주세요" required="required"></textarea></td>
 		</tr>
 		<tr class="tr_oneLine" id="price" >
 			<th><span>목표 금액</span></th>
-			<td colspan="2"><div class="bottom_line"><input type="text" name="price" placeholder="단위를 제외한 숫자를 적어주세요 (ex. 1000000)" autocomplete="off"></div></td>
+			<td colspan="2"><div class="bottom_line"><input type="text" name="price" placeholder="단위를 제외한 숫자를 적어주세요 (ex. 1000000)" autocomplete="off" required="required"></div></td>
 		</tr>
 
 		<tr id="tag_wrap" >
 			<th class="tr_oneLine">태그 설정</th>
 			<td colspan="2">
-				<div class="input_tag"><input type="text" name="keyword1" placeholder="태그1 (필수)"></div>
+				<div class="input_tag"><input type="text" name="keyword1" placeholder="태그1 (필수)" required="required"></div>
 				<div class="input_tag"><input type="text" name="keyword2"  placeholder="태그2 (선택)"></div>
 				<div class="input_tag"><input type="text" name="keyword3"  placeholder="태그3 (선택)"></div>
 			</td>
@@ -81,7 +81,7 @@
 		
 		<tr class="tr_oneLine" id="enddate_wrap">
 			<th>종료일</th>
-			<td colspan="2"><div class="bottom_line"><input type="text" id="endDate" name="endDate" placeholder="종료일을 입력해주세요 (ex. 2022-11-04)" autocomplete="off"></div></td>
+			<td colspan="2"><div class="bottom_line"><input type="text" id="endDate" name="endDate" placeholder="종료일을 입력해주세요 (ex. 2022-11-04)" autocomplete="off" required="required"></div></td>
 		</tr>
 	<tr>
 			<th class="tr_oneLine">이미지</th>

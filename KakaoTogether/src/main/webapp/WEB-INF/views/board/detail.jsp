@@ -14,7 +14,7 @@
 		<div class="cover">
 			<div class="front-pack">
 				<span class="tit_visual">${bvo.title}</span>
-				<span class="txt_sponsor">${bvo.userName}</span>
+				<span class="txt_sponsor">${bvo.writer}</span>
 				<div class="hash_group">
 					<a class="topic_hash">${bvo.topic}</a>
 					<a class="link_hash">${bvo.keyword1}</a>
@@ -67,17 +67,17 @@
 		</div>
 	
 	<!-- 수정하기 btn -->
-	<%-- <c:if test="${content.writer == loginIdx}"> --%>
+	 <c:if test="${bvo.mno == ses.mno || bvo.mno == userMno}">
 		<div id="btn_update">
 			<a href="/board/modify?bno=${bvo.bno }"><span>수 정</span></a>		
 		</div>
-	<%-- </c:if> --%>
+	</c:if> 
 	
 	<!-- 응원하기 하단바 -->
 	<div class="fund_float">
 		
 		
-		<c:if test="${ses.mno eq null}">
+		<c:if test="${userId eq null && ses.mno eq null}">
 		
 		<a href="/member/login">
 		<button type="button" class="btn_c chrBtn" id="chrBtn" data-bno="${bvo.bno }">
@@ -103,7 +103,8 @@
 		
 		</c:if>
 		
-		<c:if test="${ses.mno ne null}">
+		
+		<c:if test="${ses.mno ne null || userId ne null}">
 		<a>
 		<button type="button" class="btn_c chrBtn" id="chrBtn" data-bno="${bvo.bno }">
 			<span class="ico_cheer"><img src="/resources/image/ico_cheer.svg"></span>
@@ -131,7 +132,8 @@
 <div id="wrap_donation">
 	<form action="/donation/register" method="post" name="donationForm" class="form">
 		<input type="hidden" id="bno" name="bno" value="${bvo.bno}">
-		<input type="hidden" id="mno" name="mno" value="${ses.mno}">
+		<input type="hidden" id="mno" name="mno" value="${ses.mno}${userMno }">
+		<input type="hidden" id="donaName" name="donaName" value="${ses.userName}${userNickname }">
 		<div class="wrap_fund">
 			<div class="list_pay">
 				<span class="txt_tit">기부금 결제</span>
@@ -152,7 +154,7 @@
 			</div>
 			<div class="write_box">
 				<span class="txt_tit">응원 댓글 쓰기</span>
-				<textarea id="comment" name="comment" placeholder="따뜻한 한마디를 남겨주세요"></textarea>
+				<textarea id="comment" name="comment" placeholder="따뜻한 한마디를 남겨주세요" required="required"></textarea>
 				<div class="reset"></div>
 			</div>
 			<div class="donation_info">
