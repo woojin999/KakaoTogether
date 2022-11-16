@@ -53,12 +53,26 @@ public class BoardVO {
 		this.boardImg = boardImg;
 	}
 
-	// list
-	public BoardVO(long bno, long mno, String title, String writer,long price, long finalPrice, String boardImg) {
+	// pmlist
+	public BoardVO(long bno, long mno, String title, String writer, String state, long price, String regAt, String endDate, long finalPrice, String boardImg) {
 		this.bno = bno;
 		this.mno = mno;
 		this.title = title;
 		this.writer = writer;
+		this.state = state;
+		this.price = price;
+		this.regAt = regAt;
+		this.endDate = endDate;
+		this.finalPrice = finalPrice;
+		this.boardImg = boardImg;
+	}
+	// list
+	public BoardVO(long bno, long mno, String title, String writer, String state,long price, long finalPrice, String boardImg) {
+		this.bno = bno;
+		this.mno = mno;
+		this.title = title;
+		this.writer = writer;
+		this.state = state;
 		this.price = price;
 		this.finalPrice = finalPrice;
 		this.boardImg = boardImg;

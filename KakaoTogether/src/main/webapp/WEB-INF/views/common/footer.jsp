@@ -13,12 +13,6 @@
 				<span> 작업 기간 : 2022.11. </span>
 			</div>
 		</div>
-		
-		<div class="right">
-			<div class="link_info">
-				<a href="/sendmail" class="contact"><span>Contact Me</span></a>
-			</div>
-		</div>
 	</div>
 </div>
 

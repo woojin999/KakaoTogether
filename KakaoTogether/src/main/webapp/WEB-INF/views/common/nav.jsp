@@ -14,18 +14,18 @@
 				</a>
 			</li>
 			<li>
+				<a href="/board/promotion">
+					<span>프로모션</span>
+				</a>
+			</li>
+			<li>
 				<a href="/wait">
-					<span>마음날씨</span>
+						<span>마음날씨</span>
 				</a>
 			</li>
 			<li>
 				<a href="/more">	
 						<span>더보기</span>
-				</a>
-			</li>
-			<li>
-				<a href="/sendmail">
-						<span>Contact</span>
 				</a>
 			</li>
 		</ul>

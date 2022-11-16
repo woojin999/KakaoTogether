@@ -56,13 +56,20 @@ public class BoardController {
 		bvo.setBoardImg(fileList.get(0).getSaveDir()+"\\"+fileList.get(0).getUuid()+"_th"+fileList.get(0).getImageName());
 		int isUp = bsv.register(new BoardDTO(bvo, fileList));
 		log.info(">>> board register : {}", isUp > 0 ? "OK":"FAIL");
-		return "redirect:/board/list";
+		return "redirect:/board/list?state=A&topic=";
 	}
 	
 	@GetMapping("/list")
 	public void list(Model model, PagingVO pgvo) {
 		model.addAttribute("list", bsv.getList(pgvo));
 		int totalCount = bsv.getTotalCount(pgvo);
+		model.addAttribute("pgn", new PagingHandler(pgvo, totalCount));
+	}
+	
+	@GetMapping("/promotion")
+	public void pmlist(Model model, PagingVO pgvo) {
+		model.addAttribute("list", bsv.getPmList(pgvo));
+		int totalCount = bsv.getPmTotalCount(pgvo);
 		model.addAttribute("pgn", new PagingHandler(pgvo, totalCount));
 	}
 	
@@ -74,8 +81,14 @@ public class BoardController {
 		return "/board/mylist";
 	}
 	
-	@GetMapping({"detail", "/modify"})
+	@GetMapping({"/detail", "/modify"})
 	public void detail(@RequestParam("bno") long bno, Model model,
+			@ModelAttribute("pgvo") PagingVO pgvo) {
+		model.addAttribute("bdto", bsv.getDetail(bno));
+	}
+	
+	@GetMapping({"/pmcontent", "/modify"})
+	public void pmconten(@RequestParam("bno") long bno, Model model,
 			@ModelAttribute("pgvo") PagingVO pgvo) {
 		model.addAttribute("bdto", bsv.getDetail(bno));
 	}
