@@ -56,6 +56,7 @@
 					<option value="0">주제 선택</option>
 					<option value="A">모금진행</option>
 					<option value="B">모금후기</option>
+					<option value="C">프로모션</option>
 				</select>
 			</td>
 			<td>

@@ -94,7 +94,7 @@
 	</insert>
 	
 	<select id="selectList" resultType="bvo" parameterType="pgvo">
-	 select a.bno, b.mno, title, writer, price, final_price, board_img, m.user_name
+	 select a.bno, b.mno, title, writer, state, price, final_price, board_img, m.user_name
 	 from(
 	 	select bno from board where bno > 0 
 	 	
@@ -107,6 +107,20 @@
 	 left join member m
 	 on b.mno = m.mno;
 	</select>
+	
+	<select id="selectPmList" resultType="bvo" parameterType="pgvo">
+	 select a.bno, b.mno, title, writer, price, b.reg_at, end_date, final_price, board_img, m.user_name
+	 from(
+	 	select bno from board where bno > 0 
+	 	order by reg_at desc
+	 	limit #{pageStart}, #{qty}
+	 ) a left join board b
+	 on a.bno = b.bno
+	 left join member m
+	 on b.mno = m.mno
+	 where state = 'C'
+	</select>
+	
 	<select id="selectMyList" resultType="bvo" parameterType="pgvo">
 	 select a.bno, b.mno, title, writer, price, final_price, board_img, m.user_name
 	 from(
@@ -137,6 +151,10 @@
 	
 	<select id="selectMyTotalCount" resultType="int" parameterType="pgvo">
 		select count(bno) from board where mno = #{mno}
+	</select>
+	
+	<select id="selectPmTotalCount" resultType="int" parameterType="pgvo">
+		select count(bno) from board where state = 'C'
 	</select>
 	
 	<select id="selectLastBno" resultType="long">

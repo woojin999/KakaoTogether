@@ -43,6 +43,11 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
+	public List<BoardVO> getPmList(PagingVO pgvo) {
+		return bdao.selectPmList(pgvo);
+	}
+	
+	@Override
 	public List<BoardVO> getMyList(PagingVO pgvo) {
 		return bdao.selectMyList(pgvo);
 	}
@@ -96,6 +101,12 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int getMyTotalCount(PagingVO pgvo) {
 		return bdao.selectMyTotalCount(pgvo);
+	}
+
+
+	@Override
+	public int getPmTotalCount(PagingVO pgvo) {
+		return bdao.selectPmTotalCount(pgvo);
 	}
 
 	

@@ -80,6 +80,7 @@
 	</div>
 	<ul class="list_fund">
 		 <c:forEach items="${list }" var="bvo">
+		 <c:if test="${bvo.state ne 'C' }">
 		<li class="listcard">
 			<a href="/board/detail?bno=${bvo.bno }&pageNo=${pgn.pgvo.pageNo }&qty=${pgn.pgvo.qty}" class="link_content">
 				<span class="img_box">
@@ -104,24 +105,9 @@
 				</span>
 			</a>
 		</li>
+		</c:if>
 		</c:forEach>
 	</ul>
-			<div class="" style="text-align: center; font-size: 18px; padding-top: 20px">
-						<ul>
-							<c:if test="${pgn.prev }">
-								<li><a
-									href="/board/list/?pageNo=${pgn.startPage-1 }&qty=${pgn.pgvo.qty }&state=A&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}">이전</a></li>
-							</c:if>
-							<c:forEach begin="${pgn.startPage }" end="${pgn.endPage }"
-								var="i">
-								<li class="${pgn.pgvo.pageNo == i ? 'active' : '' }" style="margin-right: 10px"><a
-									href="/board/list/?pageNo=${i }&qty=${pgn.pgvo.qty}&state=A&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}" >${i }</a></li>
-							</c:forEach>
-							<c:if test="${pgn.next }">
-								<li><a
-									href="/board/list/?pageNo=${pgn.endPage+1 }&qty=${pgn.pgvo.qty }&state=A&type=${pgn.pgvo.type}&topic=${pgn.pgvo.topic}">다음</a></li>
-							</c:if>
-						</ul>
-					</div>
+
 </div>
 <jsp:include page="common/footer.jsp" />
