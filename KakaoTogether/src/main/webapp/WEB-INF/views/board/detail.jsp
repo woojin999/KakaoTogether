@@ -85,7 +85,7 @@
 			<span class="txt_cheer">응원</span>
 			<span class="txt_cheer chrnum" id="chrnum" style="font-size: 15px; color: lightgray;">${bvo.cheer}</span>
 		</button></a>
-		<a class="btn_s" href="/member/login">
+		<a class="btn_s" href="/member/login" >
 			<span class="ico_share"><img src="/resources/image/ico_share.svg"></span>
 			<span class="txt_share">공유</span>
 		</a>
@@ -111,7 +111,7 @@
 			<span class="txt_cheer">응원</span>
 			<span class="txt_cheer chrnum" id="chrnum" style="font-size: 15px; color: lightgray;">${bvo.cheer}</span>
 		</button></a>
-		<a class="btn_s" onclick="share()">
+		<a class="btn_s kakaotalk" id="btnKakao" onclick="fn_sendFB('kakaotalk');return false;" target="_self" title="카카오톡 새창열림">
 			<span class="ico_share"><img src="/resources/image/ico_share.svg"></span>
 			<span class="txt_share">공유</span>
 		</a>
@@ -184,17 +184,46 @@ function donate_close(){
 	$('#black_bg_donation').css("display", "none");
 	$('#wrap_donation').css("display", "none");
 }
+
+
+function fn_sendFB(sns) {
+	var thisUrl = document.URL;
+	var snsTitle = "카카오 같이가치";
+	var desc = "${bvo.subTitle}";
+	
+	
+	if( sns == 'kakaotalk' ) {
+	    // 사용할 앱의 JavaScript 키 설정
+	    Kakao.init('abc6778f0de6df09ed6416d7651ccd5f');
+	    
+	    // 카카오링크 버튼 생성
+	    Kakao.Link.createDefaultButton({
+	        container: '#btnKakao', // HTML에서 작성한 ID값
+	        objectType: 'feed',
+	        content: {
+	        title: "${bvo.title}", // 보여질 제목
+	        description: desc, // 보여질 설명
+	        imageUrl: 'https://ifh.cc/g/4SQoPz.png', // 콘텐츠 URL
+	        link: {
+	            mobileWebUrl: thisUrl,
+	            webUrl: thisUrl
+	        }
+	        }
+	    });
+	}
+}
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
 	getDonationList(document.getElementById('bnoVal').innerText);
 });
+
 </script>
 
 <script src="/resources/js/donation.register.js"></script>
 <script src="/resources/js/donation.list.js"></script>
 <script src="/resources/js/board.cheerup.js"></script>
-
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </div>
 </div> 
