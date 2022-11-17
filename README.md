@@ -19,19 +19,20 @@
 회원 활동 내역 관리 기능 - 마이페이지(나의글, 내 기부)
 <br>
 
-<br>
+
 # ERD
-![kakao](https://user-images.githubusercontent.com/102591792/202474134-af4c45d6-c817-467f-89c3-50455bf1340e.png)
-<br>
+
+<img src="https://user-images.githubusercontent.com/102591792/202476729-12df933d-335e-48ad-a5a7-0ece2c0a84a9.png">
+
 # Main
-![main](https://user-images.githubusercontent.com/102591792/202474523-cc09b5aa-b171-444f-9a84-3cd10613b28e.JPG)
-<br>
+<img src="https://user-images.githubusercontent.com/102591792/202474523-cc09b5aa-b171-444f-9a84-3cd10613b28e.JPG">
+
 # Login
-![로그인화면](https://user-images.githubusercontent.com/102591792/202474543-b7a79318-1e0b-40d8-bdb7-bf75cb7549f5.JPG)
-<br>
+<img src="https://user-images.githubusercontent.com/102591792/202474543-b7a79318-1e0b-40d8-bdb7-bf75cb7549f5.JPG">
+
 # donation
-![기부](https://user-images.githubusercontent.com/102591792/202474564-6622f8c9-eeb0-4576-8801-55fbf0d0cc59.JPG)
-<br>
+<img src="https://user-images.githubusercontent.com/102591792/202474564-6622f8c9-eeb0-4576-8801-55fbf0d0cc59.JPG">
+
 # share
-![공유](https://user-images.githubusercontent.com/102591792/202474576-876fd45d-5e9f-4ad2-a1db-0f9d7200ff99.JPG)
-<br>
+<img src="https://user-images.githubusercontent.com/102591792/202474576-876fd45d-5e9f-4ad2-a1db-0f9d7200ff99.JPG">
+
