@@ -132,6 +132,7 @@
 	 left join member m
 	 on b.mno = m.mno
 	 where b.mno = #{mno}
+	 and state != 'C'
 	</select>
 	
 	<select id="selectOne" resultType="bvo">
