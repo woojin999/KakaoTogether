@@ -86,7 +86,7 @@
 			<span class="txt_cheer chrnum" id="chrnum" style="font-size: 15px; color: lightgray;">${bvo.cheer}</span>
 		</button></a>
 		<a class="btn_s" href="/member/login" >
-			<span class="ico_share"><img src="/resources/image/ico_share.svg"></span>
+			<span class="ico_share"><img src="/resources/image/kakaotalk_sharing_btn_small.png"></span>
 			<span class="txt_share">공유</span>
 		</a>
 		<c:if test="${bvo.state eq 'A'}">
@@ -112,7 +112,7 @@
 			<span class="txt_cheer chrnum" id="chrnum" style="font-size: 15px; color: lightgray;">${bvo.cheer}</span>
 		</button></a>
 		<a class="btn_s kakaotalk" id="btnKakao" onclick="fn_sendFB('kakaotalk');return false;" target="_self" title="카카오톡 새창열림">
-			<span class="ico_share"><img src="/resources/image/ico_share.svg"></span>
+			<span class="ico_share"><img src="/resources/image/kakaotalk_sharing_btn_small.png"></span>
 			<span class="txt_share">공유</span>
 		</a>
 		<c:if test="${bvo.state eq 'A'}">
